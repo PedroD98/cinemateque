@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
   end
 
   def new
+    @movies = Movie.all
     @session = @movie_theater.sessions.build
   end
 

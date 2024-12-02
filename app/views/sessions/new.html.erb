@@ -1,2 +1,23 @@
 <h1>Nova Sessão</h1>
 
+<%= form_with model: @session, url: movie_theater_sessions_path(@movie_theater) do |f| %>
+  <div>
+    <%= f.label :movie_id, class: 'form-label' %>
+    <%= f.collection_select :movie_id, @movies, :id, :title, class: 'form-field'  %>
+  </div>
+
+  <div>
+    <%= f.label :room_id, class: 'form-label' %>
+    <%= f.collection_select :room_id, @movie_theater.rooms, :id, :name, class: 'form-field'  %>
+  </div>
+
+  <div>
+    <%= f.label :starting_time, class: 'form-label' %>
+    <%=f.time_field :starting_time, class: 'form-field' %>
+  </div>
+
+  <div class="mt-5">
+    <%= f.submit 'Criar sessão', class: 'btn-confirm' %>
+  </div>
+
+<% end %>

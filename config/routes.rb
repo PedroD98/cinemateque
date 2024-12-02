@@ -10,9 +10,12 @@ Rails.application.routes.draw do
   root "home#index"
   resources :movie_theaters, only: [:index, :new, :create, :show] do
     resources :rooms, only: [:new, :create]
+    resources :sessions, only: [:index, :new, :create]
   end
 
-  resources :sessions, only: [:index, :new, :create]
-
   resources :movies, only: [:index, :new, :create, :destroy]
+
+  namespace :api, defaults: { format: :json } do
+    get 'movie_theaters/:id', to: 'movie_theaters#show'
+  end
 end

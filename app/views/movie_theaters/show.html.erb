@@ -12,3 +12,6 @@
 <% end %>
 </div>
 <%= link_to 'Adicionar Sala', new_movie_theater_room_path(@movie_theater), class: 'btn-confirm'%>
+<div class="mt-10">
+  <%= button_link 'Criar sessão', new_movie_theater_session_path(@movie_theater) %>
+</div>

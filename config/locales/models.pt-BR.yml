@@ -10,6 +10,9 @@ pt-BR:
       movie:
         one: Filme
         other: Filmes
+      session:
+        one: Sessão
+        other: Sessões
     attributes:
       movie_theater:
         name: Nome
@@ -22,4 +25,9 @@ pt-BR:
         year: Ano
         director: Direção
         plot: Enredo
+      session:
+        movie_id: Filme
+        room_id: Sala
+        starting_time: Horário
+        day_of_week: Dia da semana
 
